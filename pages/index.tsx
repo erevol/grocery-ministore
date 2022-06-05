@@ -44,16 +44,18 @@ const IndexRoute: React.FC<IIndexRoute> = ({ products = []}) => {
             {products.map((product) => (
               <div className="group relative" key={product.id}>
                 <div className="relative w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                  <Image
-                    src={product.image}
-                    loader={() => product.image}
-                    alt={`${product.title} - ${product.category}`}
-                    className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                    layout="fill"
-                    objectFit="cover"
-                    unoptimized
-                    priority
-                  />
+                  <div className="relative min-h-[300px] w-full h-full object-center object-cover lg:w-full lg:h-full">
+                    <Image
+                      src={product.image}
+                      loader={() => product.image}
+                      alt={`${product.title} - ${product.category}`}
+                      className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                      layout="fill"
+                      objectFit="cover"
+                      unoptimized
+                      priority
+                    />
+                  </div>
                 </div>
                 <div className="mt-4 flex justify-between">
                   <div>
